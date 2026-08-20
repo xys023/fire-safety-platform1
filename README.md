@@ -1,2 +1,59 @@
-# fire-safety-platform1
-"火先知"早期预警平台，联网智能烟感功能及联防联。 Fire Prophet "early warning platform, networked intelligent smoke sensing function and joint prevention and contro.
+# 智慧消防联防联控平台
+
+基于"XXX平台 + 火先知早期预警平台"需求开发的智慧消防联防联控系统，包含PC端管理后台和移动端小程序。
+
+## 快速开始
+
+```bash
+# 安装依赖
+npm install
+
+# 启动服务
+node server.js
+```
+
+- PC端后台：http://localhost:3000/admin/
+- 移动端：http://localhost:3000/mobile/
+- 默认账号：admin / 123456
+
+详细部署说明请查看 [部署教程.md](./部署教程.md)
+
+## 功能模块
+
+### PC端管理后台
+- 数据大屏（ECharts可视化）
+- 场所管理（三小场所/出租屋/自建房/群租房/工厂企业/公共场所）
+- 网格管理（街道-社区-网格三级）
+- 烟感设备管理（实时状态、远程消音）
+- 警情管理（五级联动处置流程）
+- 隐患管理（红黄绿三色闭环）
+- 巡查记录（标准化检查模板）
+- 工单管理（派单-处理-验收闭环）
+- 消防资源（消火栓/微型消防站）
+- 消防知识库
+- 用户管理
+
+### 移动端小程序
+- 工作台（数据概览、快捷入口）
+- 场所巡查（标准化检查项）
+- 隐患上报（拍照/描述/等级）
+- 警情处置（确认/到场/完成）
+- 设备监控
+- 消防地图
+- 我的工单/巡查记录
+- 修改密码
+
+## 技术栈
+
+- 后端：Node.js + Express + better-sqlite3 + JWT + bcrypt
+- PC端：Vue 3 + Element Plus + ECharts（CDN引入，无需构建）
+- 移动端：Vue 3（CDN引入，微信小程序风格H5）
+- 数据库：SQLite（零配置，单文件）
+
+## 安全特性
+
+- JWT Token 认证
+- bcrypt 密码加密
+- SQL 参数化查询（防注入）
+- 文件上传类型限制 + 随机文件名（防路径遍历）
+- Vue 默认 XSS 防护
